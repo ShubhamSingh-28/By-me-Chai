@@ -38,8 +38,8 @@ function Navbar() {
               <Link href="/dashboard" title="Dashboard">
                 Dashboard
               </Link>
-              <Link href={""} title="Dashboard"> 
-                Homepage
+              <Link href={`/${session.user.name}`} title="Dashboard"> 
+                Yourpage
               </Link>
                <button onClick={()=>signOut()}>Logout</button>
               

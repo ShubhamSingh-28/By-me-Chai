@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 
-const connectDb =async()=>{
+export const connectDb =async()=>{
   try {
     await mongoose.connect(process.env.MONGODB_URI)
     console.log("connect");
@@ -42,9 +42,14 @@ export const authOptions =NextAuth({
         console.log("Error while saving");
         return false
       }
-         
-    
   }
+  },
+  async session({session,user,token}){
+    await connectDb()
+    const dbuser = await User.findOne({email:session.user.email})
+    session.user.name = dbuser?.name
+    session.user.username = dbuser?.username
+    return session
   }
   
 }

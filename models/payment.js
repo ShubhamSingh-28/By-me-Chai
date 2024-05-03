@@ -2,7 +2,7 @@ import mongoose, {  Schema } from "mongoose";
 
 
 const paymentSchema =new Schema({
-    name:{type:String, required:true},
+    name:{type:String, },
     to_user:{type:String, required:true},
     oid:{type:String, required:true},
     message:{type:String},
