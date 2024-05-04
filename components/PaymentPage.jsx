@@ -18,15 +18,16 @@ function PaymentPage({params}) {
   const pay = (amount ) => {
   let a=  initiate(amount, params.username, paymentform)
 console.log(params);
+let orderId = a.id
   var options = {
-    "key": "rzp_test_PSqnEmvO43rz2D", // Enter the Key ID generated from the Dashboard
+    "key":process.env.NEXT_PUBLIC_TEST_KEY_ID , // Enter the Key ID generated from the Dashboard
     "amount": amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "currency": "INR",
     "name":params.username, //your business name
     "description": "Test Transaction",
     "image": "https://example.com/your_logo",
-    "order_id": a.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    "callback_url": `${process.env.URL}/api/razorpay`,
+    "order_id": orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "callback_url": `/`,
     "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
         "name": "Gaurav Kumar", //your customer's name
         "email": "gaurav.kumar@example.com",
