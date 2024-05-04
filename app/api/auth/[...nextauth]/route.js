@@ -51,9 +51,9 @@ export const authOptions =NextAuth({
     session.user.username = dbuser?.username
     return session
   }
-  
-}
 
+},
+secret:"gjhhvjvguvjhk",
 })
 
 export {authOptions as GET, authOptions as POST}
