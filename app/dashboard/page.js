@@ -2,7 +2,8 @@
 
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from "next/navigation";
-function page() {
+
+function Dashboard() {
   const { data: session } = useSession()
  const router= useRouter()
   if (!session) {
@@ -35,4 +36,4 @@ function page() {
   )
 }
 
-export default page
+export default Dashboard
