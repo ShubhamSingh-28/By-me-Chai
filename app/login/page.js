@@ -16,7 +16,7 @@ function Login() {
       <div>
         <div className="flex flex-col items-center gap-2 min-h-screen text-white  p-10">
           
-          <button onClick={()=>signIn("github",{callbackUrl:'/dashboard'})} className="flex items-center hover:text-black border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+          <button onClick={()=>signIn("github",{callbackUrl:'/'})} className="flex items-center hover:text-black border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
             <svg
               className="h-6 w-6 mr-2"
               xmlns="http://www.w3.org/2000/svg"
